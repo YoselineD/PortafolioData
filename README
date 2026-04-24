@@ -1,0 +1,32 @@
+# Freight Invoice Analysis Pipeline
+
+End-to-end Python + SQL pipeline for UPS GFF invoice data —
+cleans, pivots, and aggregates charge-line data into
+shipment-level reporting tables.
+
+**Invoice period:** Oct 22 – Nov 28, 2025 | **623 packages** | **$4,056 total**
+
+## Files
+
+| File | Description |
+|------|-------------|
+| `01_clean_and_pivot.py` | Cleans raw flat file → one row per shipment, adds calculated columns |
+| `02_aggregations.py` | Produces summary tables by zone, state, region, accessorial |
+| `01_shipment_pivot_logic.sql` | SQL equivalent of the pivot script (BigQuery / PostgreSQL ready) |
+| `02_analysis_queries.sql` | KPI queries, zone distribution, accessorial breakdown, outlier detection |
+| `Freight_Analysis_Workbook.xlsx` | Excel workbook: KPI dashboard, zone pivot, savings calculator |
+
+## Key Metrics
+
+| Metric | Value |
+|--------|-------|
+| Total packages | 623 |
+| Total invoice | $4,056.11 |
+| Freight base | $2,896 (71%) |
+| Fuel surcharge | $512 (12.6% — above avg) |
+| Accessorials | $648 (16%) |
+| Packages with extra charges | 46.5% |
+
+## Tools
+
+Python · pandas · SQL · Excel (openpyxl) · Zoho Analytics
